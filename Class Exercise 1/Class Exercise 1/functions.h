@@ -106,21 +106,62 @@ int convertBinarytoDecimal(int binaryNumber)
 }
 void drawRightAngledTriangle()
 {
+	for (int row = 0; row < 3; row++)
+	{
+		std::cout << "A";
+		std::cout << std::endl;
 
+		for (int col = 0; col < row; col++)
+		{
+			std::cout << "A";
+
+		}
+
+		std::cout << "A";
+	}
+
+	std::cout << "A";
 }
 void drawIsocelesTriangle()
 {
+	int numA = 0; // track the amount of A's printed
 
+	for (int row = 0; row < 8; row++)
+	{
+
+		if (row <= 4) 
+		{
+			numA = row; // from rows 0-4, number of A's to print matches the current row
+		}
+		else
+		{
+			numA = 7 - (row - 1); //from rows 5-7, number of A's to print is (maxRows minus currentRow)
+		}
+
+
+		for (int col = 0; col < numA; col++)
+		{
+			std::cout << "A";
+		}
+		std::cout << std::endl;
+	}
 }
-void drawIsocelesTriangle2()
-{
 
-}
 
-int find(int size, int arr[], int toFind)
+int find(int toFind, int arr[], int size)
 {
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] == toFind)
+		{
+			return i;
+		}
+	}
 	return -1;
 }
+
+
+
 int find2ndLargest(int size, int arr[])
 {
 	return -1;

@@ -82,82 +82,104 @@ int main()
 	else {
 		std::cout << "no" << std::endl;
 	}
+	//std::cout << "-----------------------" << std::endl;
+	//std::cout << "Prime Number" << std::endl;
+	//std::cout << "3: ";
+	//if (isAPrimeNumber(3))
+	//{
+	//	std::cout << "yes" << std::endl;
+	//}
+	//else {
+	//	std::cout << "no" << std::endl;
+	//}
+	//std::cout << "2147483647: ";
+	//if (isAPrimeNumber(2147483647))
+	//{
+	//	std::cout << "yes" << std::endl;
+	//}
+	//else {
+	//	std::cout << "no" << std::endl;
+	//}
+	//std::cout << "4: ";
+	//if (isAPrimeNumber(4))
+	//{
+	//	std::cout << "yes" << std::endl;
+	//}
+	//else {
+	//	std::cout << "no" << std::endl;
+	//}
+	//std::cout << "-----------------------" << std::endl;
+	//std::cout << "Binary to Decimal" << std::endl;
+	//std::cout << "110 in Binary is 6: ";
+	//if (convertBinarytoDecimal(110) == 6)
+	//{
+	//	std::cout << "yes" << std::endl;
+	//}
+	//else {
+	//	std::cout << "no" << std::endl;
+	//}
+	//std::cout << "111 in Binary is 7: ";
+	//if (convertBinarytoDecimal(111) == 7)
+	//{
+	//	std::cout << "yes" << std::endl;
+	//}
+	//else {
+	//	std::cout << "no" << std::endl;
+	//}
+	//std::cout << "-----------------------" << std::endl;
+
+
+	//std::cout << "5 chars to int" << std::endl;
+
+	//char charArray[5]{};
+	//int convertedInt;
+	//std::cout << "Enter 5 characters 0-9: ";
+
+	//for (int i = 0; i < 5; i++) // first loop to fill the array with the characters given by the user
+	//{
+	//	std::cin >> charArray[i];
+	//}
+
+	//for (int i = 0; i < 5; i++) // second loop to check if any of the inputted characters are not digits
+	//{
+	//	if (!isdigit(charArray[i]))
+	//	{
+	//		convertedInt = 0;
+	//		break;	// exit if/else and loop if a non-digit is found and leave convertedInt = 0
+	//	}
+	//	else
+	//	{
+	//		convertedInt = input5CharsConvertToInt(charArray, 5); // call function if all characters are digits
+	//	}
+	//}
+
+	//std::cout << convertedInt << std::endl;
+
+
 	std::cout << "-----------------------" << std::endl;
-	std::cout << "Prime Number" << std::endl;
-	std::cout << "3: ";
-	if (isAPrimeNumber(3))
-	{
-		std::cout << "yes" << std::endl;
-	}
-	else {
-		std::cout << "no" << std::endl;
-	}
-	std::cout << "2147483647: ";
-	if (isAPrimeNumber(2147483647))
-	{
-		std::cout << "yes" << std::endl;
-	}
-	else {
-		std::cout << "no" << std::endl;
-	}
-	std::cout << "4: ";
-	if (isAPrimeNumber(4))
-	{
-		std::cout << "yes" << std::endl;
-	}
-	else {
-		std::cout << "no" << std::endl;
-	}
+	std::cout << "Triangles" << std::endl;
+	drawRightAngledTriangle();
+	std::cout << "\n" << std::endl;
+	drawIsocelesTriangle();
+
+
 	std::cout << "-----------------------" << std::endl;
-	std::cout << "Binary to Decimal" << std::endl;
-	std::cout << "110 in Binary is 6: ";
-	if (convertBinarytoDecimal(110) == 6)
+	std::cout << "Q8: Find element in an array" << std::endl;
+	int arr[] = { 1, 2, 3, 4, 5 };
+	int size = 5;
+	int toFind = 2;
+
+	int index = find(toFind, arr, size);
+
+	if (index != -1)
 	{
-		std::cout << "yes" << std::endl;
+		std::cout << "Number found at index: " << index << std::endl;
 	}
-	else {
-		std::cout << "no" << std::endl;
-	}
-	std::cout << "111 in Binary is 7: ";
-	if (convertBinarytoDecimal(111) == 7)
+	else
 	{
-		std::cout << "yes" << std::endl;
-	}
-	else {
-		std::cout << "no" << std::endl;
-	}
-	std::cout << "-----------------------" << std::endl;
-
-
-	std::cout << "5 chars to int" << std::endl;
-
-	char charArray[5]{};
-	int convertedInt;
-	std::cout << "Enter 5 characters 0-9: ";
-
-	for (int i = 0; i < 5; i++) // first loop to fill the array with the characters given by the user
-	{
-		std::cin >> charArray[i];
+		std::cout << "Number was not found. " << std::endl;
 	}
 
-	for (int i = 0; i < 5; i++) // second loop to check if any of the inputted characters are not digits
-	{
-		if (!isdigit(charArray[i]))
-		{
-			convertedInt = 0;
-			break;	// exit if/else and loop if a non-digit is found and leave convertedInt = 0
-		}
-		else
-		{
-			convertedInt = input5CharsConvertToInt(charArray, 5); // call function if all characters are digits
-		}
-	}
-
-	std::cout << convertedInt << std::endl;
-
-
-	//std::cout << "Triangles" << std::endl;
-	//drawRightAngledTriangle();
-	//drawIsocelesTriangle();
+	
 
 }

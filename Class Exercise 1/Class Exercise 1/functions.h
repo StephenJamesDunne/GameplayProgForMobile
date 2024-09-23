@@ -323,9 +323,43 @@ void rotateLeft(int size, int arr[])
 }
 bool twoMovies(int flightLength, int movieLengths[], int size)
 {
+	for (int i = 0; i < size - 1; i++)
+	{
+		for (int j = i + 1; j < size; i++)
+		{
+			if (movieLengths[i] + movieLengths[j] == flightLength)
+			{
+				std::cout << "Movies at elements " << i << " and " << j << " match flight length of: " << flightLength << std::endl;
+				return true;
+			}
+			else
+			{
+				std::cout << "No two movies match the current flight length. " << std::endl;
+			}
+		}
+	}
+
 	return false;
 }
 int wordCounter(int size, char characters[])
 {
-	return 0;
+	bool countingLetters = false; // track if we are between letters in different words or not
+	int wordCount = 0;
+
+	for (int i = 0; i < size; i++)
+	{
+		if ((characters[i] >= 'a' && characters[i] <= 'z') || (characters[i] >= 'A' && characters[i] <= 'Z')) // range of alphabetic characters
+		{
+			if (!countingLetters) // if not currently counting a word and the current element is a letter
+			{
+				wordCount++;
+				countingLetters = true;
+			}
+		}
+		else
+		{
+			countingLetters = false; // lands on a space, change counting letters to false so wordCount is not incorrectly incremented next iteration
+		}
+	}
+	return wordCount;
 }

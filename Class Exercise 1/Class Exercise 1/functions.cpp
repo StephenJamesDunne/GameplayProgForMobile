@@ -348,5 +348,34 @@ int main()
 	}
 	std::cout << std::endl;
 
+
+	std::cout << "-----------------------" << std::endl;
+	std::cout << "Q17: Inflight Movies Question \n" << std::endl;
+
+	int flightLength = 150;
+	int movieLengths[] = { 90, 60, 120, 110, 109, 89 };
+	int seventeenSize = sizeof(movieLengths) / sizeof(movieLengths[0]);
+
+	bool twoMoviesLong = twoMovies(flightLength, movieLengths, seventeenSize);
+
+	std::cout << "-----------------------" << std::endl;
+	std::cout << "Q18 Word Counter  \n" << std::endl;
+
+	char eighteenCharArray[] = "This is an array of characters with which to test the function";
+	int eighteenSize = sizeof(eighteenCharArray) / sizeof(eighteenCharArray[0]);
+
+	std::cout << "Given array: ";
+
+	for (int i = 0; i < eighteenSize; i++)
+	{
+		std::cout << eighteenCharArray[i];
+	}
+	std::cout << std::endl;
+
+	int eighteenResult = wordCounter(eighteenSize, eighteenCharArray);
+
+	std::cout << "There are " << eighteenResult << " word(s) in the given array of characters. " << std::endl;
+
+
 	std::cin.get();
 }

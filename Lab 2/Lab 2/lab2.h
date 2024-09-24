@@ -74,18 +74,21 @@ int ReplaceWithMinusOne(int array[4][6])
 }
 void FallDownAndReplace(int array[4][6])
 {
-	for (int column = 0; column < 6; column++)
+	for (int column = 0; column < 6; column++) 
 	{
-		for (int row = 4; row > 0; row--) // start at last row moving upwards
+		int count = 3; // reset count to 3 each time we iterate
+
+		for (int row = 3; row >= 0; row--) // start at last row moving upwards
 		{
-			if (array[row][column] == -1)
+			if (array[row][column] != -1) // if the current position is not a replaceable tile
 			{
-				for (int movingRow = row; movingRow > 0; movingRow--) // start from current row and move upwards
-				{
-					array[movingRow][column] = array[movingRow - 1][column]; // moves all numbers above the -1 down one position
-					array[0][column] = -2;
-				}
+				array[count--][column] = array[row][column]; // decrement the row each iteration of the loop until a -1 is found
 			}
+		}
+
+		for (int i = count; i >= 0; i--) // assign the range of -1s in the grid to a new loop
+		{
+			array[i][column] = -2; // replace each -1 in this range
 		}
 	}
 
